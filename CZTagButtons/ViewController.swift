@@ -21,15 +21,17 @@ class ViewController: UIViewController {
     }
     func creatSubButtons (buttonsCount : ()->Int) {
         tagButtons.removeAll()
-        for i in 0..<buttonsCount() {
+        for index in 0..<buttonsCount() {
             let button = CZTagButton(type: UIButtonType.custom)
-            button.setTitle(buttonTitles[i], for: UIControlState.normal)
+            button.tag = index
+            button.setTitle(buttonTitles[index], for: UIControlState.normal)
+            button.addTarget(self, action:#selector(btnClick), for: .touchUpInside)
             tagButtons.append(button)
-            if i==0 {
+            if index==0 {
                 button.bounds.origin.x = 5
                 button.bounds.origin.y = 5
             }else{
-                let lastBtn  = tagButtons[i-1]
+                let lastBtn  = tagButtons[index-1]
                 let lastBtnX = lastBtn.bounds.origin.x + lastBtn.bounds.size.width
                 let lastBtnY = lastBtn.bounds.origin.y
                 button.bounds.origin.x = lastBtnX + INTERSTICE
@@ -43,6 +45,13 @@ class ViewController: UIViewController {
             superView.addSubview(button)
         }
     }
+    
+    func btnClick(button : UIButton) -> Void {
+        
+        print("\(button.tag)")
+        
+    }
+    
     private lazy var buttonTitles :[String] = {
         ()->[String]
         in
