@@ -4,6 +4,7 @@
 ![image](https://github.com/Czing/CZTagButtonsSwiftDemo/raw/master/czingTagBtnView.png)
 Demo仅供参考    
 ------- 
-   OC 一行代码实现封装请点击
+下面链接为OC封装好的代码
 ------- 
-[OC 一行代码实现按钮排序](https://github.com/Czing/CZTagButtons) 
+[OC链接](https://github.com/Czing/CZTagButtons) 
+====  
